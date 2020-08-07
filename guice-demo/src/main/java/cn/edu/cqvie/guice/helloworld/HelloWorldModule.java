@@ -7,7 +7,6 @@ import com.google.inject.Provides;
 import com.google.inject.multibindings.MapBinder;
 import com.google.inject.name.Named;
 import com.google.inject.name.Names;
-import javafx.beans.binding.MapBinding;
 
 import java.io.PrintStream;
 import java.util.List;

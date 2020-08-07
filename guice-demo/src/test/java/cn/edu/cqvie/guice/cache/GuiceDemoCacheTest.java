@@ -9,8 +9,6 @@ import com.google.inject.Inject;
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.xml.ws.Service;
-
 import static org.junit.Assert.*;
 
 public class GuiceDemoCacheTest {

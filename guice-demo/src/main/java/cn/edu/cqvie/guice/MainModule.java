@@ -3,7 +3,6 @@ package cn.edu.cqvie.guice;
 import cn.edu.cqvie.guice.helloworld.*;
 import com.google.inject.AbstractModule;
 
-import java.io.PrintStream;
 
 /**
  * @author ZAKJ_ASUS
