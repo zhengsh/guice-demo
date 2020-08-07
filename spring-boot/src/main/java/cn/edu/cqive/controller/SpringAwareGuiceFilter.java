@@ -1,4 +1,4 @@
-package cn.edu.cqive.filter;
+package cn.edu.cqive.controller;
 
 import com.google.inject.Guice;
 import com.google.inject.servlet.GuiceFilter;

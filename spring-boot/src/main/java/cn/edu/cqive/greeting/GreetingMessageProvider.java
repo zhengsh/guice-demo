@@ -1,7 +1,6 @@
-package cn.edu.cqive.service;
+package cn.edu.cqive.greeting;
 
-import cn.edu.cqive.dao.SampleDao;
-import cn.edu.cqive.web.RequestParams;
+import cn.edu.cqive.persistence.SampleDao;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 

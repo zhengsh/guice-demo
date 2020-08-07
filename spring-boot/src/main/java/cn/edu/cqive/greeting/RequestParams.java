@@ -1,4 +1,4 @@
-package cn.edu.cqive.web;
+package cn.edu.cqive.greeting;
 
 import com.google.inject.Singleton;
 import com.google.inject.servlet.RequestScoped;

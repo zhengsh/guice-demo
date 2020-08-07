@@ -1,4 +1,4 @@
-package cn.edu.cqive.web;
+package cn.edu.cqive.greeting;
 
 import cn.edu.cqvie.guice.helloworld.MyApplet;
 import com.google.inject.Inject;

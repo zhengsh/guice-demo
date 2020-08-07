@@ -1,8 +1,6 @@
-package cn.edu.cqive.web;
+package cn.edu.cqive.greeting;
 
-import cn.edu.cqive.dao.SampleDao;
 import cn.edu.cqvie.guice.helloworld.MyDestination;
-import com.google.inject.Inject;
 import com.google.inject.servlet.RequestScoped;
 
 //@Singleton

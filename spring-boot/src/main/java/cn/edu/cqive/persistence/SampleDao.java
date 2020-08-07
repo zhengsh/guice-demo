@@ -1,4 +1,4 @@
-package cn.edu.cqive.dao;
+package cn.edu.cqive.persistence;
 
 import org.springframework.stereotype.Component;
 

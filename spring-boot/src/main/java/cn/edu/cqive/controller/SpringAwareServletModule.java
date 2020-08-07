@@ -1,21 +1,25 @@
-package cn.edu.cqive.web;
+package cn.edu.cqive.controller;
 
-import cn.edu.cqive.dao.SampleDao;
+import cn.edu.cqive.persistence.SampleDao;
 import com.google.inject.AbstractModule;
-import com.google.inject.Module;
 import com.google.inject.Provides;
+import com.google.inject.servlet.ServletModule;
 import org.springframework.context.ApplicationContext;
 
-public class SpringAwareModule extends AbstractModule {
+/**
+ * @author ZAKJ_ASUS
+ */
+public class SpringAwareServletModule extends AbstractModule {
 
     private final ApplicationContext applicationContext;
 
     @Override
     protected void configure() {
+        install(new ServletModule());
         bind(ApplicationContext.class).toInstance(applicationContext);
     }
 
-    public SpringAwareModule(ApplicationContext applicationContext) {
+    public SpringAwareServletModule(ApplicationContext applicationContext) {
         this.applicationContext = applicationContext;
     }
 
