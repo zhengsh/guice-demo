@@ -2,10 +2,8 @@ package cn.edu.cqive;
 
 
 import cn.edu.cqive.filter.SpringAwareGuiceFilter;
-import cn.edu.cqive.web.HelloWorldWebModule;
-import cn.edu.cqive.web.RequestParams;
-import cn.edu.cqive.web.SpringAwareModule;
-import cn.edu.cqive.web.WebDestination;
+import cn.edu.cqive.web.*;
+import cn.edu.cqvie.guice.annotaion.Args;
 import cn.edu.cqvie.guice.helloworld.MyApplet;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -31,30 +29,16 @@ public class WebApplication {
     }
 
     @Bean @RequestScope
-    MyApplet applet(Injector injector) {
-        return injector.getInstance(MyApplet.class);
+    GreetingHandler getRequestParams(Injector injector) {
+        return injector.getInstance(GreetingHandler.class);
     }
 
-    @Bean @RequestScope
-    WebDestination destination(Injector injector) {
-        return injector.getInstance(WebDestination.class);
-    }
+    @Autowired
+    GreetingHandler greetingHandler;
 
-    @Bean @RequestScope
-    RequestParams params(Injector injector) {
-        return injector.getInstance(RequestParams.class);
-    }
-
-    @Autowired MyApplet applet;
-    @Autowired WebDestination webDestination;
-    @Autowired RequestParams requestParams;
-
-    @GetMapping("/hello")
-    public String home(@RequestParam("msg") String msg) {
-        //return "Greetings from Spring Boot! =>" + msg;
-        requestParams.setMessage(msg);
-        applet.run();
-        return webDestination.getResult();
+    @GetMapping("/greeting")
+    public String greeting(@RequestParam("name") String name) {
+        return greetingHandler.getByName(name);
     }
 
     public static void main(String[] args) {

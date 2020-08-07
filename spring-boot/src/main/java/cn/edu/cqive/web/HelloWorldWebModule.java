@@ -1,5 +1,6 @@
 package cn.edu.cqive.web;
 
+import cn.edu.cqive.service.GreetingMessageProvider;
 import cn.edu.cqvie.guice.helloworld.*;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
@@ -15,11 +16,6 @@ public class HelloWorldWebModule extends AbstractModule {
         install(new ServletModule());
         bind(MyApplet.class).to(StringWritingApplet.class);
         bind(MyDestination.class).to(WebDestination.class);
-    }
-
-    @Provides
-    @Output
-    String getOutputString(RequestParams requestParam) {
-        return requestParam.getMessage();
+        bind(String.class).annotatedWith(Output.class).toProvider(GreetingMessageProvider.class);
     }
 }

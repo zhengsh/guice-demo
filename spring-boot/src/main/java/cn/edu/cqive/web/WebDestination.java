@@ -9,14 +9,7 @@ import com.google.inject.servlet.RequestScoped;
 @RequestScoped
 public class WebDestination implements MyDestination {
 
-    private final StringBuilder sb;
-    private final SampleDao dao;
-
-    @Inject
-    public WebDestination(SampleDao dao) {
-        this.sb = new StringBuilder();
-        this.dao = dao;
-    }
+    private final StringBuilder sb = new StringBuilder();
 
 
     public String getResult() {
@@ -26,6 +19,5 @@ public class WebDestination implements MyDestination {
     @Override
     public void write(java.lang.String s) {
         sb.append(s);
-        dao.save(s);
     }
 }

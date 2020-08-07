@@ -11,17 +11,17 @@ public class RequestParams {
         System.out.println("RequestParams");
     }
 
-    public RequestParams(String message) {
-        this.message = message;
+    public RequestParams(String greetingName) {
+        this.greetingName = greetingName;
     }
 
-    private String message;
+    private String greetingName;
 
-    public String getMessage() {
-        return message;
+    public String getGreetingName() {
+        return greetingName;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setGreetingName(String greetingName) {
+        this.greetingName = greetingName;
     }
 }
